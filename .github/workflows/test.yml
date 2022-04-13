@@ -1,0 +1,15 @@
+name: test
+
+on:
+  pull_request:
+
+jobs:
+  check_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code into the workspace
+        uses: actions/checkout@v2
+      - name: Check Code
+        uses: ducla5/laravel-app-reviewdog-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
